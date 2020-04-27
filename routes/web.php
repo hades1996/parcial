@@ -34,3 +34,13 @@ Route::post(
     'generator_builder/generate-from-file',
     '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@generateFromFile'
 )->name('io_generator_builder_generate_from_file');
+
+Route::resource('marcas', 'marcasController');
+
+Route::resource('modelos', 'modelosController');
+
+Route::resource('servicios', 'serviciosController');
+
+Route::resource('matriculas', 'matriculasController');
+
+Route::resource('matriServis', 'matri_serviController');
