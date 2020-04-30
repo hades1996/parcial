@@ -14,9 +14,9 @@
             <td>{{ $matriServi->servicio }}</td>
                 <td>
                     {!! Form::open(['route' => ['matriServis.destroy', $matriServi->id], 'method' => 'delete']) !!}
+                    <input type="hidden" name="macricula" value="{{ ($matriServi->matriculas)}}">
                     <div class='btn-group'>
-                        <a href="{{ route('matriServis.store', [$matriServi->id]) }}" class='btn btn-ghost-success'><i class="fa fa-eye"></i></a>
-                        <!--<a href="{{ route('matriServis.edit', [$matriServi->id]) }}" class='btn btn-ghost-info'><i class="fa fa-edit"></i></a>-->
+                        
                         {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-ghost-danger', 'onclick' => "return confirm('Are you sure?')"]) !!}
                     </div>
                     {!! Form::close() !!}
