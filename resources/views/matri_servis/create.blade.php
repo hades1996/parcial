@@ -23,7 +23,7 @@
                                    @include('matri_servis.fields')
 
                                 {!! Form::close() !!}
-                                @include('matri_servis.table')
+                                
                               
                             </div>
                         </div>

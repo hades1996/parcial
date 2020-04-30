@@ -9,6 +9,8 @@ use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use app\models\Matricula;
+use session;
 use Flash;
 use Response;
 
@@ -59,7 +61,7 @@ class matri_serviController extends AppBaseController
 
         Flash::success('Matri Servi saved successfully.');
 
-        return redirect(route('matriculas.index'));
+        return redirect(route('matriServisamatriculas', $input('matriculas')));
     }
 
     /**
@@ -71,20 +73,14 @@ class matri_serviController extends AppBaseController
      *
      * @return Response
      */
-    public function destroy($id)
+    public function destroy($id,Request $request)
     {
-        $matriServi = $this->matriServiRepository->find($id);
-
-        if (empty($matriServi)) {
-            Flash::error('Matri Servi not found');
-
-            return redirect(route('matriServis.index'));
-        }
+        $input=$request->all();
 
         $this->matriServiRepository->delete($id);
 
         Flash::success('Matri Servi deleted successfully.');
 
-        return redirect(route('matriServis.index'));
+        return redirect(route('matriServisamatriculas', $input('matriculas')));
     }
 }

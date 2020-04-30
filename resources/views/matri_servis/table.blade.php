@@ -8,12 +8,12 @@
             </tr>
         </thead>
         <tbody>
-        @foreach($matri_servi as $matriServi)
+        @foreach($matri_servi as $matriServis)
             <tr>
                 
-            <td>{{ $matriServi->servicio }}</td>
+            <td>{{ $matriServis->servicio }}</td>
                 <td>
-                    {!! Form::open(['route' => ['matriServis.destroy', $matriServi->id], 'method' => 'delete']) !!}
+                    {!! Form::open(['route' => ['matriServis.destroy', $matriServis->id], 'method' => 'delete']) !!}
                     <input type="hidden" name="macricula" value="{{ ($matriServi->matriculas)}}">
                     <div class='btn-group'>
                         
