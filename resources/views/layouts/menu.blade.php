@@ -22,9 +22,4 @@
         <span>Matriculas</span>
     </a>
 </li>
-<li class="nav-item {{ Request::is('matriServis*') ? 'active' : '' }}">
-    <a class="nav-link" href="{{ route('matriServis.index') }}">
-        <i class="nav-icon icon-cursor"></i>
-        <span>Matri Servis</span>
-    </a>
-</li>
+

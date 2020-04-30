@@ -16,6 +16,7 @@ class CreateMatriServiTable extends Migration
         Schema::create('matri_servi', function (Blueprint $table) {
             $table->integer('matricula')->unsigned();
             $table->integer('servicio')->unsigned();
+            $table->timestamps();
             $table->foreign('matricula')->references('id')->on('matriculas');
             $table->foreign('servicio')->references('id')->on('servicios');
         });

@@ -44,3 +44,5 @@ Route::resource('servicios', 'serviciosController');
 Route::resource('matriculas', 'matriculasController');
 
 Route::resource('matriServis', 'matri_serviController');
+
+Route::get('matriServisamatriculas/{id}', 'matri_serviController@create')->name('matriServisamatriculas');
